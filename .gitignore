@@ -1,3 +1,10 @@
 # popular IDEs
 .idea
-.vscode/
+.vscode
+
+# project specific files
+reports
+tmp_snapshots
+Snapshots*
+res_scan.txt
+ips.txt
