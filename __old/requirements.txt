@@ -1,0 +1,10 @@
+python-geoip-python3
+python-geoip-geolite2
+python-telegram-bot
+opencv-python
+countrycode
+ipaddress
+colorama
+requests
+pillow
+pytz

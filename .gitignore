@@ -1,10 +1,10 @@
-# popular IDEs
+# editors folders/files
 .idea
-.vscode
 
-# project specific files
-reports
-tmp_snapshots
-Snapshots*
-res_scan.txt
+# cache
+__py_cache__
+
+# app folders/files
+dist
 ips.txt
+ips_results.txt

@@ -1,0 +1,6 @@
+admin:admin
+admin:admin123
+666666:666666
+admin:12345
+admin:123456
+888888:888888

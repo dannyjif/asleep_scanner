@@ -1,0 +1,11 @@
+# popular IDEs
+../.idea
+.vscode
+
+# project specific files
+__pycache__
+reports
+tmp_snapshots
+Snapshots*
+res_scan.txt
+ips.txt

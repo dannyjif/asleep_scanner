@@ -1,8 +1,6 @@
 # -*- coding:utf-8 -*-
 import io
 import logging
-import queue
-import sys
 import threading
 from pathlib import PurePath
 from time import sleep
@@ -42,7 +40,7 @@ class ScreenshotThread(threading.Thread):
             if self.trash_counter > 2:
                 logging.debug(f'{self.trash_counter} trash channels in a row. Skipping this cam')
                 break
-                
+
             try:
                 snapshot = dahua.get_snapshot(channel)
             except Exception as e:
@@ -50,9 +48,9 @@ class ScreenshotThread(threading.Thread):
                 dead_counter += 1
                 continue
             dead_counter = 0
-            
+
             print(fore_green(f'Brute progress: [{config.state}] Grabbing snapshots for {dahua.ip}.. \n')
-                + back_yellow(f'Writing snapshots.. Total saved {config.snapshots_counts} from {total_channels}'), end='\r')
+                  + back_yellow(f'Writing snapshots.. Total saved {config.snapshots_counts} from {total_channels}'), end='\r')
             sleep(0.05)
 
             name = f"{dahua.ip}_{dahua.port}_{dahua.login}_{dahua.password}_{channel + 1}_{dahua.model}.jpg"
@@ -65,7 +63,7 @@ class ScreenshotThread(threading.Thread):
                     self.save_image(name, snapshot)
             except Exception as e:
                 logging.debug(f'{fore_red(f"Cannot open snapshot: {str(e)}")}')
-            
+
         logging.debug(f'{dahua.ip} exit from make_snapshots()')
 
     def is_trash(self, snapshot):
